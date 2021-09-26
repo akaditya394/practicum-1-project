@@ -2,7 +2,7 @@ import React from 'react'
 
 const Auth = () => {
     return (
-        <div>
+        <div className="login-register">
            <div className="auth">
         <div className="register">
           <h3 className="register-title">Have me met before? Register now!</h3>

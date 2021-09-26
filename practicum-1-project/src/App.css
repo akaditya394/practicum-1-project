@@ -8,6 +8,10 @@ body {
     height:auto;
     width: 100%;
 } */
+.login-register{
+    height:auto;
+    width:auto;
+}
 .auth {
   float: left;
   height: auto;

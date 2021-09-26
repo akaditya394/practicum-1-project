@@ -2,12 +2,12 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="login-register">
       <nav className="navbar navbar-expand-lg navbar-light bg-blue static-top">
         <div className="container">
           <a className="navbar-brand" href="#">
             <img
-              src="https://www.pngplay.com/wp-content/uploads/1/Letter-R-PNG-Stock-Photo.png"
+              src=""
               alt="..."
               height="65"
             />
@@ -32,8 +32,11 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  Link
+                  About
                 </a>
+              </li>
+              <li className="nav-item">
+              <a className="nav-link" href="#">Contact Us</a>
               </li>
             </ul>
           </div>
