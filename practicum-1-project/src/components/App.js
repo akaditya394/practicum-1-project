@@ -1,12 +1,15 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./Navbar";
+import Auth from "./Auth";
 
 const App = () => {
   return (
     <div>
-      <h1>Hello World!</h1>
-    </div>
-  )
-}
+      <Navbar />
+      <Auth />
+     
+      </div>
+  );
+};
 
 export default App;
-
