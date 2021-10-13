@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Navbar from "./Navbar";
 
 const Auth = () => {
     return (
+        
         <div className="login-register">
+        <Navbar/>
            <div className="auth">
         <div className="register">
           <h3 className="register-title">Have me met before? Register now!</h3>
@@ -43,6 +46,7 @@ const Auth = () => {
                 placeholder="Confirm your password"
               ></input>
             </div>
+            <button type="button" class="btn btn-primary">Register</button>
           </form>
         </div>
       </div> 
@@ -64,6 +68,7 @@ const Auth = () => {
                 placeholder="Password"
               ></input>
             </div>
+            <button type="button" class="btn btn-primary">Login</button>
           </form>
         </div>
       </div>
