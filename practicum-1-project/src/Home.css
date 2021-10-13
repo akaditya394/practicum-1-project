@@ -1,0 +1,54 @@
+.fluid-conatiner{
+    float: right;
+    margin-right: 100px;
+}
+
+.container-1-b{
+    float: left;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:500;
+    font-size: 5rem;
+    color: white;
+    padding:20px;
+    margin-left: 100px;
+    margin-top: 100px;
+    line-height: 1.15;
+    
+}
+
+.container-2{
+    position:absolute;
+    margin-left: 100px;
+    margin-top:350px;
+    /* background-color:white; */
+    /* padding: 25px; */
+}
+
+.container-2-a{
+    float:left;
+    margin: 20px;
+}
+
+.btn {
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;
+    font-family: 'Ubuntu', sans-serif !important;
+    color: #ffffff !important;
+    font-size: 20px !important;
+    background: #0984e3 !important;
+    padding: 10px 20px 10px 20px !important;
+    text-decoration: none!important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+  }
+
+
+.btn:hover{
+    background: white !important;
+    color: #0984e3  !important;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset !important;
+}  
+.container-2-b{
+    float:right;
+    margin: 20px;
+}

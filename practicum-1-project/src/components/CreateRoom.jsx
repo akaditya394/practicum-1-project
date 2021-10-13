@@ -1,9 +1,11 @@
 import React from "react";
-import "../styles.css"
+import Navbar from "./Navbar";
+import "../styles.css";
 
 const CreateRoom = () => {
   return (
     <div>
+    <Navbar />
       <div className="create-room">
         <form>
           <div className="form-group row">

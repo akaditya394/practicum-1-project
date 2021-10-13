@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+
 import Navbar from "./Navbar";
 import CreateRoom from "./CreateRoom";
 import Profile from "./Profile";
@@ -15,7 +15,7 @@ const App = () => {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/home" component={Home}/>
+          <Route exact path="/" component={Home}/>
           <Route exact path="/auth" component={Auth} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/createroom" component={CreateRoom} />

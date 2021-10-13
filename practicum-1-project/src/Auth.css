@@ -2,7 +2,7 @@ body {
     /* background-image: url(https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); */
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #52abff;
+    background: url("./assets/5559852.jpg");
   }
   /* footer{ 
       height:auto;
@@ -22,7 +22,8 @@ body {
     margin: 10px;
   }
   .register {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
     border: 5px solid;
     border-color: rgb(12, 214, 221);
     text-align: center;
@@ -30,7 +31,7 @@ body {
     background-color: white;
     height: auto;
     width: 400px;
-    padding: 25px;
+    padding: 10px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     margin-left: 200px;
@@ -38,7 +39,8 @@ body {
   }
   
   .login {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Ubuntu", sans-serif;
+    font-weight:400;
     border: 5px solid;
     border-color: rgb(12, 214, 221);
     text-align: center;

@@ -1,4 +1,5 @@
 import React from "react";
+import "../Navbar.css";
 
 const Navbar = () => {
   return (
@@ -6,11 +7,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-blue static-top">
         <div className="container">
           <a className="navbar-brand" href="#">
-            <img
-              src=""
-              alt="..."
-              height="65"
-            />
+            <p>rendezvous</p>
           </a>
           <button
             className="navbar-toggler"
