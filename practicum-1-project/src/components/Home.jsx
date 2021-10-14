@@ -19,7 +19,7 @@ const Home = () => {
       </div>
       <div className="container-2">
         <div className="container-2-a">
-          <button type="button" className="btn btn-primary">
+          <button type="button" className="btn-home btn-primary">
             Get Started
           </button>
         </div>

@@ -29,7 +29,7 @@
     margin: 20px;
 }
 
-.btn {
+.btn-home {
     -webkit-border-radius: 5px !important;
     -moz-border-radius: 5px !important;
     border-radius: 5px !important;
@@ -43,7 +43,7 @@
   }
 
 
-.btn:hover{
+.btn-home:hover{
     background: white !important;
     color: #0984e3  !important;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset !important;

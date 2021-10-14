@@ -3,6 +3,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background: url("./assets/5559852.jpg");
+    height: 100%;
   }
   /* footer{ 
       height:auto;

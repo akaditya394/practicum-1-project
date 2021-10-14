@@ -16,7 +16,7 @@ body {
 }
 
 .navigationBrand {
-  font-family: "ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -28,10 +28,12 @@ body {
 
 .nav-link {
   font-size: 1.2rem;
-  font-family: "Montserrat-light";
+  font-family: 'Ubuntu', sans-serif;
   color: black;
 }
-
+.col-sm-10{
+  margin-bottom: 20px;
+}
 .navbar {
   padding: 0;
 }
@@ -41,13 +43,20 @@ body {
 #profile {
   padding-bottom: 100px;
   height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-family: 'Ubuntu', sans-serif !important;
+  height: 100%;
+  background: url("./assets/5559852.jpg");
+  border-radius: 5px 5px 0 0;
+
 }
 
 #profile-card {
-  position: relative;
+  position: static;
   border-radius: 1rem;
   top: 2rem;
-  background-color: #fff;
+  color: white;
+  background-color: #1B9CFC;
   margin: 2% 8%;
   padding-top: 4%;
 }
@@ -82,7 +91,8 @@ body {
 
 label {
   font-size: large;
-  font-weight: bold;
+  font-weight: 400;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .edit-profile {
@@ -90,28 +100,57 @@ label {
   margin-left: auto;
   display: block;
 }
+.epbtn{ -webkit-border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  border-radius: 5px !important;
+  font-family: 'Ubuntu', sans-serif !important;
+  color: #ffffff !important;
+  font-size: 20px !important;
+  background: #0984e3 !important;
+  padding: 10px 20px 10px 20px !important;
+  text-decoration: none!important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 
+  margin-left: 230px;
+}
+
+.epbtn:hover{
+  background: white !important;
+  color: #0984e3  !important;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset !important;
+
+}
 .rooms {
   padding-bottom: 3rem;
+  margin-top: 60px;
 }
 
 .room-heading {
   padding-left: 13rem;
+  font-weight: 400;
+  color: #fff;
 }
 
 .box {
   max-width: 40rem;
   margin: 3.125rem auto;
-  background: white;
-  border-radius: 10 px;
-  box-shadow: 10px 10px 15px -10px rgba(0, 0, 0, 0.3);
+  /* background: white; */
+  font-weight: 400;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   text-align: center;
+  padding: 50px 0 50px 0;
+  background-color: #81ecec;
+
 }
 
 .col-md-12 {
   margin-bottom: 1rem;
 }
 
+.label{
+  margin-top:35px;
+}
 .item {
   min-height: 70px;
   display: flex;
