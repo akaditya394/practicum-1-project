@@ -10,8 +10,6 @@ function Rest() {
         
         <div className='main2'>
         <Navbar />
-            <h5 id='side'>xyz@gmail.com</h5>
-            <AccountCircleIcon id='acc'/>
             <div className="centre-left">
                 <h3 id='cam'>Camera is off</h3>
                 <CallIcon id='callof'/>
@@ -19,9 +17,9 @@ function Rest() {
             </div>
 
             <div className="centre-right">
-                <h3>Wait till someone allows</h3>
-                <button id='ask'>Ask to join</button>
-                <button id='presentit'>Present</button>
+                <h3 className="message-wait">Wait till someone allows</h3>
+                <button type="button" id='ask'>Ask to join</button>
+                <button type="button" id='presentit'>Present</button>
             
             </div>
         </div>

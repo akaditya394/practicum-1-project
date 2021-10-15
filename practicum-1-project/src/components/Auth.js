@@ -47,7 +47,7 @@ const Auth = () => {
                 placeholder="Confirm your password"
               ></input>
             </div>
-            <button type="button" class="btn btn-primary">Register</button>
+            <button type="button" class="btn-register">Register</button>
           </form>
         </div>
       </div> 
@@ -69,7 +69,7 @@ const Auth = () => {
                 placeholder="Password"
               ></input>
             </div>
-            <button type="button" class="btn btn-primary">Login</button>
+            <button type="button" class="btn-login">Login</button>
           </form>
         </div>
       </div>

@@ -14,10 +14,43 @@ img{
     margin-left: 2.5vw;
     border-radius: 10px;
 }
+
+
 .left{
-    margin-top: 15vh;
-    margin-left: 5vw;
+    margin-top: 75px;
+    margin-left: 25px;
+    border-radius: 25px;
+    color: white !important;
+    background-color: #6c5ce7;
+    padding: 25px 15px 0 25px;
+    font-family: 'Ubuntu', sans-serif;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
+
+.btn-join{
+    height: 54px;
+    width: 75px;
+    margin-left: 25px;
+    border-radius: 10px;
+    background-color: #a29bfe;
+    border: none;
+    color: white;
+    font-size: 18px;
+    transition: all;
+   transition-duration: 0.3s;
+   transition-timing-function: linear;
+ 
+}
+
+.btn-join:hover{
+    background-color: white;
+    color: #a29bfe;
+}
+
+.heading{
+    color: white !important;
+}
+
 /* 703px */
 .right{
     width: 35%;
@@ -39,7 +72,7 @@ img{
 .green{
     border: 0px;
     height: 8vh;
-    background-color: rgb(0, 128, 96);
+    background-color: #a29bfe;
     color: white;
     border-radius: 6px;
    transition: all;
@@ -47,6 +80,11 @@ img{
    transition-timing-function: linear;
    width: 13vw;
    
+}
+
+.tagline{
+    font-size: 25px;
+    margin-top:25px;
 }
 .simple:hover{
     background-color: rgb(211, 211, 211);
@@ -57,7 +95,8 @@ img{
     cursor:row-resize
 }
 .green:hover{
-    background-color: rgb(0, 99, 74);
+    background-color: white;
+    color: #a29bfe !important;
 }
 .simple{
     border: 0px;

@@ -10,25 +10,41 @@
 }
 .centre-left{
     position: absolute;
-    width: 40vw;
-    height: 55vh;
-    top: 15vh;
-    left: 10vw;
+    height: auto;
+    width: 500px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    padding: 50px;
+    text-align: center;
+    margin: 25px 25px 25px 150px;
     background-color: rgb(46, 46, 46);
     border-radius: 20px;   
+    font-family: 'Ubuntu', sans-serif;
 }
 #cam{
  color: white;
  margin: 25%;
 }
 .centre-right{
-position: absolute;
-top: 15vh;
-left:60vw ;
-width: 30vw;
-height: 55vh;
+position: static;
+margin-top:100px;
+font-family: 'Ubuntu', sans-serif;
+color: white;
+background-color:white;
+margin-right: 100px;
+text-align: center;
+float: right;
+width: auto;
+padding:25px 50px 25px 25px;
+height: 200px;
+background-color:#6c5ce7;
+box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 border-radius: 20px;
 }
+
+.message-wait{
+  font-size: 25px;
+}
+
 #ask{
 border: 2px solid rgba(128, 128, 128, 0);
 width:9vw;
@@ -37,9 +53,19 @@ width:9vw;
   color: white;
   background-color: rgb(4, 143, 120);
   font-weight: 600;
-  margin-left: 2vw;
-  margin-top: 5vh;
+  margin-left: 25px;
+  margin-top: 15px;
+  background-color: #a29bfe;
+  transition: all !important;
+   transition-duration: 0.3s !important;
+   transition-timing-function: linear !important;
 }
+
+#ask:hover{
+  color: #a29bfe !important;
+  background-color: white;
+}
+
 #side{
   position: absolute;
   left: 80vw;
@@ -53,21 +79,31 @@ width:9vw;
   margin-left: 10px;
   width:9vw;
   height: 8vh;
+  background-color:#a29bfe;
   border-radius: 10px;
-  color: rgb(4, 143, 120);
+  color: white;
   font-weight: 600;
-  margin-left: 3vw;
-  margin-top: 5vh;
+  margin-left: 25px;
+  margin-top: 15px;
+  transition: all !important;
+  transition-duration: 0.3s !important;
+  transition-timing-function: linear !important;
 }
+
+#presentit:hover{
+  color: #a29bfe !important;
+  background-color: white;
+}
+
 #callof{
-  color: rgb(255, 0, 0);
-  font-size: 40px;
-  margin-top: -10vh;
-  margin-left: 13vw;
+  color: #ff7675;
+  font-size: 50px;
+  margin-top: 25px;
+  margin-left: 10px;
 }
 #vdc{
-  color: rgb(255, 0, 0);
-  font-size: 40px;
-  margin-top: -10vh;
-  margin-left: 3vw;
+  color: #ff7675;
+  font-size: 50px;
+  margin-top: 25px;
+  margin-left: 100px;
 }

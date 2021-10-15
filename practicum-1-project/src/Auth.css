@@ -26,7 +26,7 @@ body {
     font-family: "Ubuntu", sans-serif;
     font-weight: 400;
     border: 5px solid;
-    border-color: rgb(12, 214, 221);
+    border-color: #6c5ce7;
     text-align: center;
     color: black;
     background-color: white;
@@ -34,28 +34,53 @@ body {
     width: 400px;
     padding: 10px;
     border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     margin-left: 200px;
-    margin-top: 80px;
+    margin-top: 70px;
   }
   
   .login {
     font-family: "Ubuntu", sans-serif;
     font-weight:400;
     border: 5px solid;
-    border-color: rgb(12, 214, 221);
+    border-color: #6c5ce7;
     text-align: center;
     background-color: white;
     color: black;
     height: auto;
+    float: right;
+    position: static;
     width: 400px;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    margin-top: 120px;
-    margin-left: 100px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin-top: 110px;
+    margin-left: 200px;
   }
   
+.btn-register, .btn-login{
+  height: auto;
+  width: auto;
+  padding: 5px;
+  font-size:18px;
+  border-radius:5px;
+  background-color: #a29bfe;
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  transition: all !important;
+   transition-duration: 0.3s !important;
+   transition-timing-function: linear !important;
+   border: none !important;
+}
+
+.btn-login:hover, .btn-register:hover{
+  background-color: #fff !important;
+  color: #a29bfe !important;
+  border: 0.5px solid #a29bfe !important;
+  border-color: #a29bfe !important;
+}
+
+
   .form-control {
     /* background-color: #3EDBF0 !important; */
     outline: none !important;

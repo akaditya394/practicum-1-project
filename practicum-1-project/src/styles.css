@@ -16,7 +16,7 @@ body {
 }
 
 .navigationBrand {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -28,10 +28,10 @@ body {
 
 .nav-link {
   font-size: 1.2rem;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   color: black;
 }
-.col-sm-10{
+.col-sm-10 {
   margin-bottom: 20px;
 }
 .navbar {
@@ -44,11 +44,10 @@ body {
   padding-bottom: 100px;
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  font-family: 'Ubuntu', sans-serif !important;
+  font-family: "Ubuntu", sans-serif !important;
   height: 100%;
   background: url("./assets/5559852.jpg");
   border-radius: 5px 5px 0 0;
-
 }
 
 #profile-card {
@@ -100,29 +99,31 @@ label {
   margin-left: auto;
   display: block;
 }
-.epbtn{ -webkit-border-radius: 5px !important;
+.epbtn {
+  -webkit-border-radius: 5px !important;
   -moz-border-radius: 5px !important;
   border-radius: 5px !important;
-  font-family: 'Ubuntu', sans-serif !important;
+  font-family: "Ubuntu", sans-serif !important;
   color: #ffffff !important;
   font-size: 20px !important;
   background: #a29bfe !important;
   padding: 10px 20px 10px 20px !important;
-  text-decoration: none!important;
+  text-decoration: none !important;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 
   margin-left: 230px;
 }
 
-.epbtn:hover{
+.epbtn:hover {
   background: white !important;
-  color: #0984e3  !important;
+  color: #0984e3 !important;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset !important;
-
 }
 .rooms {
   padding-bottom: 3rem;
   margin-top: 60px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .room-heading {
@@ -137,19 +138,32 @@ label {
   /* background: white; */
   font-weight: 400;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   text-align: center;
-  padding: 50px 0 50px 0;
+  padding: 25px 0 25px 0;
   background-color: #a29bfe;
+}
 
+.box-profile {
+  color: white;
+  border-radius: 25px;
+  width: 75%;
+  margin-left: 150px;
+  margin-top: 60px;
+  padding: 0 0 25px 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  background-color: #a29bfe;
+  margin-bottom: 80px;
 }
 
 .col-md-12 {
   margin-bottom: 1rem;
 }
 
-.label{
-  margin-top:35px;
+.label {
+  margin-top: 35px;
 }
 .item {
   min-height: 70px;
@@ -161,32 +175,105 @@ label {
 /* /////////////Responsive */
 
 @media only screen and (max-width: 900px) {
-
   /* .rooms{
     padding-left: ;
   } */
 
-  .room-heading{
+  .room-heading {
     padding-left: 5%;
     font-size: 1.5rem;
   }
 
-  .profile__img{
+  .profile__img {
     width: 6rem;
     height: 6rem;
   }
 
-  .edit-profile{
+  .edit-profile {
     margin-right: 1rem;
   }
 }
 
 /* ////////////////////Create room */
+/* 
 
-.create-room {
-  margin: 3rem;
-}
+
 
 .member-list {
   margin-left: 4rem;
+} */
+
+
+.create-room{
+  font-family: "Montserrat", sans-serif;
+  
+  
+}
+
+/* .room-creation{
+  background: url("./assets/5559852.jpg");
+} */
+
+.form-input {
+  border-radius: 5px;
+  border: none;
+  margin: 20px 0 20px 45px;
+  background-color: #a29bfe;
+  padding-left: 10px;
+  /* margin-left: 70px; */
+  padding-top: 5px;
+  width: auto;
+  padding-bottom: 5px;
+  color: #fff;
+  /* font-family: 'Ubuntu', sans-serif; */
+}
+
+.room-plate {
+  background-color: #6c5ce7;
+  border-radius: 10px;
+  margin-left: 70px;
+  /* text-align: center; */
+  width: 90%;
+  
+  padding-bottom: 50px;
+  margin-bottom: 70px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.btn-createroom {
+  background-color: #a29bfe;
+  margin: 15px 0 25px 550px;
+  border-radius: 5px;
+  font-size: 20px;
+  height:50px;
+  padding: 0 5px 0 5px;
+  font-family: "Ubuntu", sans-serif;
+  color: #fff;
+  border: none;
+  transition: all !important;
+  transition-duration: 0.3s !important;
+  transition-timing-function: linear !important;
+}
+
+.btn-createroom:hover{
+  background-color: #fff;
+  color: #a29bfe;
+}
+
+
+.create-room-heading{
+  position: static;
+  /* margin-left: 450px; */
+  padding-top:25px;
+  color: #fff;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.created-rooms{
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  padding: 25px;
 }
