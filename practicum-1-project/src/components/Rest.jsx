@@ -1,12 +1,15 @@
 import React from 'react'
-import '../rest.css'
+import '../rest.css';
+import Navbar from "./Navbar";
 import CallIcon from '@material-ui/icons/Call';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 function Rest() {
     return (
+        
         <div className='main2'>
+        <Navbar />
             <h5 id='side'>xyz@gmail.com</h5>
             <AccountCircleIcon id='acc'/>
             <div className="centre-left">

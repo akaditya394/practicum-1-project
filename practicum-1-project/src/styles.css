@@ -56,7 +56,7 @@ body {
   border-radius: 1rem;
   top: 2rem;
   color: white;
-  background-color: #1B9CFC;
+  background-color: #6c5ce7;
   margin: 2% 8%;
   padding-top: 4%;
 }
@@ -106,7 +106,7 @@ label {
   font-family: 'Ubuntu', sans-serif !important;
   color: #ffffff !important;
   font-size: 20px !important;
-  background: #0984e3 !important;
+  background: #a29bfe !important;
   padding: 10px 20px 10px 20px !important;
   text-decoration: none!important;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
@@ -140,7 +140,7 @@ label {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   text-align: center;
   padding: 50px 0 50px 0;
-  background-color: #81ecec;
+  background-color: #a29bfe;
 
 }
 
