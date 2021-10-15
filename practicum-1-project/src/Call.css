@@ -9,7 +9,7 @@
     font-family: "Montserrat", sans-serif;
     width: 22vw;
     height: 45vh;
-    background-color: white;
+    background-color: #a29bfe;
     position: absolute;
     top: 5vh;
     left: 2vw;
@@ -21,7 +21,7 @@
     width: 20vw;
     height:8vh;
     /* margin-left: 30vw; */
-    background-color: rgb(255, 255, 255);
+    background-color:  #6c5ce7;
     position: absolute;
     left: 80vw;
     border-bottom-left-radius: 10px;
@@ -29,7 +29,9 @@
 .footer{
     width: 100vw;
     height: 10vh;
-    background-color: rgb(255, 255, 255);
+    border-radius: 20px 20px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #6c5ce7;
     position: absolute;
     top: 90vh;
     

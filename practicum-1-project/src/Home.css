@@ -32,11 +32,11 @@
 .btn-home {
     -webkit-border-radius: 5px !important;
     -moz-border-radius: 5px !important;
-    border-radius: 5px !important;
+    border-radius: 15px !important;
     font-family: 'Ubuntu', sans-serif !important;
     color: #ffffff !important;
-    font-size: 20px !important;
-    background: #0984e3 !important;
+    font-size: 22.5px !important;
+    background: #6c5ce7 !important;
     padding: 10px 20px 10px 20px !important;
     text-decoration: none!important;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
@@ -45,7 +45,7 @@
 
 .btn-home:hover{
     background: white !important;
-    color: #0984e3  !important;
+    color: #6c5ce7 !important;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset !important;
 }  
 .container-2-b{
