@@ -1,9 +1,10 @@
 body {
     /* background-image: url(https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); */
+    
+    background: url("https://image.freepik.com/free-vector/gradient-dynamic-purple-lines-background_23-2148995757.jpg");
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-    background: url("./assets/5559852.jpg");
-    height: 100%;
   }
   /* footer{ 
       height:auto;

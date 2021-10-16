@@ -46,7 +46,9 @@ body {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   font-family: "Ubuntu", sans-serif !important;
   height: 100%;
-  background: url("./assets/5559852.jpg");
+  background: url("https://image.freepik.com/free-vector/gradient-dynamic-purple-lines-background_23-2148995757.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 5px 5px 0 0;
 }
 

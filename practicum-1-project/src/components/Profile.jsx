@@ -9,29 +9,33 @@ const Profile = () => {
       <div id="profile">
         <div id="profile-card">
           <div className="profile-card__img">
-            <img className="profile__img" src="https://image.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg" alt="profile card" />
+            <img
+              className="profile__img"
+              src="https://image.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg"
+              alt="profile card"
+            />
           </div>
           <div className="profile-content">
-          <div className ="box-profile">
-            <div className="col">
-              <div className="row">
-                <div className="col">
-                  <label>Full Name </label>
+            <div className="box-profile">
+              <div className="col">
+                <div className="row">
+                  <div className="col">
+                    <label>Full Name </label>
+                  </div>
+                  <div className="col">
+                    <p>Mr. Bean</p>
+                  </div>
                 </div>
-                <div className="col">
-                  <p>Mr. Bean</p>
-                </div>
-              </div>
 
-              <div className="row">
-                <div className="col">
-                  <label>Email</label>
-                </div>
-                <div className="col">
-                  <p>mrbean@gmail.com</p>
+                <div className="row">
+                  <div className="col">
+                    <label>Email</label>
+                  </div>
+                  <div className="col">
+                    <p>mrbean@gmail.com</p>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
             <p>
               <button className="btn btn-success edit-profile epbtn">
