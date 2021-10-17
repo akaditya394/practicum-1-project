@@ -38,22 +38,23 @@
   transition: background 0.8s;
   overflow: hidden;
   background: black;
-  box-shadow: 0 70px 63px -60px #000000;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+
 }
 .card0 {
   background: url("https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg")
     center center no-repeat;
   background-size: 300px;
+  
 
   &:hover {
     background: url("https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg")
       left center no-repeat;
     background-size: 600px;
-
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
     h2 {
       opacity: 1;
     }
@@ -68,11 +69,13 @@
   background: url("https://i.pinimg.com/originals/28/d2/e6/28d2e684e7859a0dd17fbd0cea00f8a9.jpg")
     center center no-repeat;
   background-size: 300px;
+  
 
   &:hover {
     background: url("https://i.pinimg.com/originals/28/d2/e6/28d2e684e7859a0dd17fbd0cea00f8a9.jpg")
       left center no-repeat;
     background-size: 600px;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 
     h2 {
       opacity: 1;
@@ -93,6 +96,8 @@
     background: url("https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg")
       left center no-repeat;
     background-size: 600px;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    
 
     h2 {
       opacity: 1;
