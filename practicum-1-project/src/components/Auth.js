@@ -1,8 +1,18 @@
 import React from 'react';
 import Navbar from "./Navbar";
 import "../Auth.css";
+import axios from 'axios';
+
 
 const Auth = () => {
+
+
+  function googleLogin(){
+    
+    axios.post('http://localhost:4000/auth/google/', null)
+            .then(res => console.log(res.data));
+  }
+
     return (
         
         <div className="login-register">
@@ -26,13 +36,13 @@ const Auth = () => {
                 placeholder="Email"
               ></input>
             </div>
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <input
                 className="form-control"
                 type="text"
                 placeholder="Username"
               ></input>
-            </div>
+            </div> */}
             <div className="mb-3">
               <input
                 className="form-control"
@@ -48,6 +58,12 @@ const Auth = () => {
               ></input>
             </div>
             <button type="button" class="btn-register">Register</button>
+            <div class="card-body">
+          <button class="btn btn-block btn-social btn-google"  onClick={googleLogin} >
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </button>
+        </div>
           </form>
         </div>
       </div> 
@@ -69,7 +85,16 @@ const Auth = () => {
                 placeholder="Password"
               ></input>
             </div>
+            <div>
             <button type="button" class="btn-login">Login</button>
+            
+            <div class="card-body">
+            <button class="btn btn-block btn-social btn-google"  onClick={googleLogin} >
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </button>
+        </div>
+            </div>
           </form>
         </div>
       </div>
