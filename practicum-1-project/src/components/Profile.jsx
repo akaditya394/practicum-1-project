@@ -1,7 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 import "../styles.css";
 import Navbar from "./Navbar";
-const Profile = () => {
+
+const Profile = (props) => {
+
+const [profile, setProfile] = useState({
+  image: "https://image.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg",
+  name: "Mr Bean",
+  email: "mrbean@gmail.com",
+  roomMember: ["math","science"],
+  roomHost: ["Something 1","Something 2"]
+})
+
+setProfile({
+  image: props.picture,
+  name: props.name,
+  email: props.email,
+  roomMember: ["math","science"],
+  roomHost: ["Something 1","Something 2"]
+})
+
   return (
     <div>
       <Navbar />
@@ -11,7 +29,7 @@ const Profile = () => {
           <div className="profile-card__img">
             <img
               className="profile__img"
-              src="https://image.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg"
+              src={profile.image}
               alt="profile card"
             />
           </div>
@@ -23,7 +41,7 @@ const Profile = () => {
                     <label>Full Name </label>
                   </div>
                   <div className="col">
-                    <p>Mr. Bean</p>
+                    <p>{profile.name}</p>
                   </div>
                 </div>
 
@@ -32,7 +50,7 @@ const Profile = () => {
                     <label>Email</label>
                   </div>
                   <div className="col">
-                    <p>mrbean@gmail.com</p>
+                    <p>{profile.email}</p>
                   </div>
                 </div>
               </div>
@@ -49,7 +67,7 @@ const Profile = () => {
                 <div className="col-md-12">
                   <div className="row">
                     <div className="col-md-4">
-                      <label className="label">maths</label>
+                      <label className="label">{profile.roomHost[0]}</label>
                     </div>
                     <div className="col-md-4">
                       <button className="btn btn-primary btn-block box-btn">
@@ -66,7 +84,7 @@ const Profile = () => {
                 <div className="col-md-12">
                   <div className="row">
                     <div className="col-md-4">
-                      <label className="label">science</label>
+                      <label className="label">{profile.roomHost[1]}</label>
                     </div>
                     <div className="col-md-4">
                       <button className="btn btn-primary btn-block box-btn">
@@ -88,7 +106,7 @@ const Profile = () => {
                 <div className="col-md-12">
                   <div className="row">
                     <div className="col-md-4">
-                      <label className="label">maths</label>
+                      <label className="label">{profile.roomMember[0]}</label>
                     </div>
                     <div className="col-md-4">
                       <button className="btn btn-primary btn-block box-btn">
@@ -105,7 +123,7 @@ const Profile = () => {
                 <div className="col-md-12">
                   <div className="row">
                     <div className="col-md-4">
-                      <label className="label">science</label>
+                      <label className="label">{profile.roomMember[1]}</label>
                     </div>
                     <div className="col-md-4">
                       <button className="btn btn-primary btn-block box-btn">
