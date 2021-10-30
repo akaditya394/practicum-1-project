@@ -1,23 +1,33 @@
-import React from "react";
+import React, {  useContext } from "react";
 import Navbar from "./Navbar";
 import "../Auth.css";
 import GoogleLogin from "react-google-login";
 import axios from "axios";
-import Profile from "./Profile"
+// import Profile from "./Profile"
+import { AppContext } from "./context";
+
+
 
 const Auth = () => {
+
+  const { PayLoadUpdate } = useContext(AppContext);
+
+
   const responseSuccessGoogle = (response) => {
     console.log("hello");
     axios
-      .post("http://localhost:4000/api/googlelogin", {
+      .post("http://localhost:4000/auth/googlelogin", {
         tokenId: response.tokenId,
       })
       .then((response) => {
         const { payload } = response.data;
+        console.log("hi payload from auth");
         console.log(payload);
-        return   <Profile />
+        PayLoadUpdate(payload);
+        console.log("Last message")
       })
-      .catch((err) => console.log("some error"));
+      .catch((err) =>{ console.log("some error")
+    console.log(err)});
   };
 
   const responseFailureGoogle = (response) => {
@@ -79,6 +89,7 @@ const Auth = () => {
                 onSuccess={responseSuccessGoogle}
                 onFailure={responseFailureGoogle}
                 cookiePolicy={"single_host_origin"}
+                redirect_uri= "postmessage"
               />
             </div>
           </form>
@@ -115,6 +126,8 @@ const Auth = () => {
                   onSuccess={responseSuccessGoogle}
                   onFailure={responseFailureGoogle}
                   cookiePolicy={"single_host_origin"}
+                redirect_uri= "postmessage"
+
                 />
               </div>
             </div>

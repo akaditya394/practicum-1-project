@@ -1,24 +1,28 @@
-import React, {useState} from "react";
+import React, { useContext} from "react";
 import "../styles.css";
 import Navbar from "./Navbar";
 
+import { AppContext } from "./context";
+
 const Profile = (props) => {
+  const { payload } = useContext(AppContext);
 
-const [profile, setProfile] = useState({
-  image: "https://image.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg",
-  name: "Mr Bean",
-  email: "mrbean@gmail.com",
-  roomMember: ["math","science"],
-  roomHost: ["Something 1","Something 2"]
-})
+  console.log(payload)
 
-setProfile({
-  image: props.picture,
-  name: props.name,
-  email: props.email,
-  roomMember: ["math","science"],
-  roomHost: ["Something 1","Something 2"]
-})
+  // const [profile, updateProfile] = useState(payload);
+
+  // function update(Payload){
+  //   updateProfile(Payload)
+  // }
+  
+  // useEffect((payload)=>{
+  //   console.log("profile from effect")
+  //   console.log(payload)
+  //   update(payload)
+  // })
+
+  // console.log("profile from profile page")
+  // console.log(profile)
 
   return (
     <div>
@@ -29,7 +33,7 @@ setProfile({
           <div className="profile-card__img">
             <img
               className="profile__img"
-              src={profile.image}
+              src={payload.picture}
               alt="profile card"
             />
           </div>
@@ -41,7 +45,7 @@ setProfile({
                     <label>Full Name </label>
                   </div>
                   <div className="col">
-                    <p>{profile.name}</p>
+                    <p>{payload.name}</p>
                   </div>
                 </div>
 
@@ -50,7 +54,7 @@ setProfile({
                     <label>Email</label>
                   </div>
                   <div className="col">
-                    <p>{profile.email}</p>
+                    <p>{payload.email}</p>
                   </div>
                 </div>
               </div>
@@ -67,7 +71,7 @@ setProfile({
                 <div className="col-md-12">
                   <div className="row">
                     <div className="col-md-4">
-                      <label className="label">{profile.roomHost[0]}</label>
+                      <label className="label">{payload.roomHost[0]}</label>
                     </div>
                     <div className="col-md-4">
                       <button className="btn btn-primary btn-block box-btn">
@@ -84,7 +88,7 @@ setProfile({
                 <div className="col-md-12">
                   <div className="row">
                     <div className="col-md-4">
-                      <label className="label">{profile.roomHost[1]}</label>
+                      <label className="label">{payload.roomHost[1]}</label>
                     </div>
                     <div className="col-md-4">
                       <button className="btn btn-primary btn-block box-btn">
@@ -106,7 +110,7 @@ setProfile({
                 <div className="col-md-12">
                   <div className="row">
                     <div className="col-md-4">
-                      <label className="label">{profile.roomMember[0]}</label>
+                      <label className="label">{payload.roomMember[0]}</label>
                     </div>
                     <div className="col-md-4">
                       <button className="btn btn-primary btn-block box-btn">
@@ -123,7 +127,7 @@ setProfile({
                 <div className="col-md-12">
                   <div className="row">
                     <div className="col-md-4">
-                      <label className="label">{profile.roomMember[1]}</label>
+                      <label className="label">{payload.roomMember[1]}</label>
                     </div>
                     <div className="col-md-4">
                       <button className="btn btn-primary btn-block box-btn">
