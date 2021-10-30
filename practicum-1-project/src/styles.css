@@ -154,6 +154,7 @@ label {
   margin-left: 150px;
   margin-top: 60px;
   padding: 0 0 25px 0;
+
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   background-color: #a29bfe;
@@ -205,11 +206,8 @@ label {
   margin-left: 4rem;
 } */
 
-
-.create-room{
+.create-room {
   font-family: "Montserrat", sans-serif;
-  
-  
 }
 
 /* .room-creation{
@@ -236,7 +234,7 @@ label {
   margin-left: 70px;
   /* text-align: center; */
   width: 90%;
-  
+
   padding-bottom: 50px;
   margin-bottom: 70px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -248,7 +246,7 @@ label {
   margin: 15px 0 25px 550px;
   border-radius: 5px;
   font-size: 20px;
-  height:50px;
+  height: 50px;
   padding: 0 5px 0 5px;
   font-family: "Ubuntu", sans-serif;
   color: #fff;
@@ -258,22 +256,21 @@ label {
   transition-timing-function: linear !important;
 }
 
-.btn-createroom:hover{
+.btn-createroom:hover {
   background-color: #fff;
   color: #a29bfe;
 }
 
-
-.create-room-heading{
+.create-room-heading {
   position: static;
   /* margin-left: 450px; */
-  padding-top:25px;
+  padding-top: 25px;
   color: #fff;
   text-align: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
-.created-rooms{
+.created-rooms {
   background-color: white;
   height: 200px;
   width: 200px;
