@@ -4,15 +4,19 @@ import "../styles.css";
 import axios from "axios";
 
 const CreateRoom = () => {
+
+  // hooks for all input field
   const [email, updateEmail] = useState("");
   const [roomName, updateName] = useState("");
   const [roomPurpose, updatePurpose] = useState("");
 
   const [emailList, updateList] = useState([]);
 
-  console.log(emailList);
-  console.log(email);
+  // console.log(emailList);
+  // console.log(email);
 
+
+  //update list 
   function handleClickAdd() {
     updateList((prevState) => {
       return [...prevState, email];
@@ -20,6 +24,7 @@ const CreateRoom = () => {
     updateEmail("");
   }
 
+    //  API call post request
   function AddList() {
     const roomInfo = {
       name: roomName,

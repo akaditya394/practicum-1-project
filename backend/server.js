@@ -5,13 +5,14 @@ require("./db/connectDB");
 
 const app = express();
 
+// router setup
 const authRoutes = require("./router/auth")
 const createroomRoutes = require("./router/createroom")
 
 app.use(express.json())
 app.use(cors());
 
-
+// router call
 app.use("/auth",authRoutes);
 app.use("/createroom",createroomRoutes);
 

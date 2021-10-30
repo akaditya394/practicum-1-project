@@ -13,6 +13,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AppContext } from "./context";
 
 const App = () => {
+
+  // User login Info (payload)
   const [payload, updatePayload] = useState({
     picture:
       "https://image.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg",
@@ -25,8 +27,8 @@ const App = () => {
 
   function PayLoadUpdate(newPayload){
     updatePayload(newPayload)
-    console.log("payload from app")
-    console.log(payload)
+    // console.log("payload from app")
+    // console.log(payload)
   }
 
   return (

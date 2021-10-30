@@ -11,7 +11,7 @@ const client = new OAuth2Client(
 exports.googleLogin = (req, res) => {
   const { tokenId } = req.body;
 
-  console.log("Here 1");
+  // console.log("Here 1");
   client
     .verifyIdToken({
       idToken: tokenId,
@@ -22,7 +22,7 @@ exports.googleLogin = (req, res) => {
       // sub = googleId
       const { sub, name, email } = response.payload;
      
-      console.log("here 7");
+      // console.log("here 7");
 
 
       let password = email + process.env.JWT_ACC_KEY;
@@ -31,6 +31,8 @@ exports.googleLogin = (req, res) => {
       User.findOrCreate(query, (err, user) => {
         console.log("I was here");
         if (!err) {
+
+          // static room info for testing
           const roomMember = [
             "abc1@gmail.com",
             "xyz2@gmailcom",
@@ -39,7 +41,7 @@ exports.googleLogin = (req, res) => {
           ];
           const roomHost = ["Something 1", "Something 2", "Something 2"];
 
-          console.log("wrong here 2");
+          // console.log("wrong here 2");
           const newUser = {
             name: name,
             email: email,
@@ -48,6 +50,7 @@ exports.googleLogin = (req, res) => {
             roomHost: roomHost,
           };
 
+          // uploading to database
           User.findOneAndUpdate(query, { $set: newUser }, (err, data) => {
             !err && console.log("User update");
           });

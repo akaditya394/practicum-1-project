@@ -1,3 +1,5 @@
+// Database connect
+
 const mongoose = require("mongoose")
 
 

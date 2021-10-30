@@ -10,21 +10,23 @@ import { AppContext } from "./context";
 
 const Auth = () => {
 
+  // payloadupdate function from contextAPI
   const { PayLoadUpdate } = useContext(AppContext);
 
-
+// React login method 
   const responseSuccessGoogle = (response) => {
-    console.log("hello");
+    // console.log("hello");
     axios
       .post("http://localhost:4000/auth/googlelogin", {
         tokenId: response.tokenId,
       })
       .then((response) => {
+        // Payload update successfull 
         const { payload } = response.data;
-        console.log("hi payload from auth");
-        console.log(payload);
+        // console.log("hi payload from auth");
+        // console.log(payload);
         PayLoadUpdate(payload);
-        console.log("Last message")
+        // console.log("Last message")
       })
       .catch((err) =>{ console.log("some error")
     console.log(err)});

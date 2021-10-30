@@ -1,14 +1,11 @@
+// Port http://localhost:4000/createroom/createroom
+
 const express = require("express");
 const router = express.Router();
 
-const { createRoom} = require("../controller/createroom")
+const { createRoom } = require("../controller/createroom");
 
-router.post("/createroom", 
-     createRoom
-    
-
-)
-
-
+// createroom function call
+router.post("/createroom", createRoom);
 
 module.exports = router;
