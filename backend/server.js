@@ -8,6 +8,8 @@ const app = express();
 // router setup
 const authRoutes = require("./router/auth")
 const createroomRoutes = require("./router/createroom")
+const dataRoutes = require("./router/data")
+const roomDataRoutes = require("./router/roomdata.js")
 
 app.use(express.json())
 app.use(cors());
@@ -15,6 +17,8 @@ app.use(cors());
 // router call
 app.use("/auth",authRoutes);
 app.use("/createroom",createroomRoutes);
+app.use("/data",dataRoutes);
+app.use("/roomdata",roomDataRoutes);
 
 const port = process.env.PORT;
 app.listen(port,()=>{

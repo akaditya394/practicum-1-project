@@ -21,51 +21,51 @@ exports.googleLogin = (req, res) => {
     .then((response) => {
       // sub = googleId
       const { sub, name, email } = response.payload;
-     
+
       // console.log("here 7");
 
+      User.findOne({email: email}, function (err,data){
 
-      let password = email + process.env.JWT_ACC_KEY;
-
-      const query = { googleId: sub };
-      User.findOrCreate(query, (err, user) => {
-        console.log("I was here");
-        if (!err) {
-
-          // static room info for testing
-          const roomMember = [
-            "abc1@gmail.com",
-            "xyz2@gmailcom",
-            "xyz2@gmailcom",
-            "xyz2@gmailcom",
-          ];
-          const roomHost = ["Something 1", "Something 2", "Something 2"];
-
-          // console.log("wrong here 2");
-          const newUser = {
-            name: name,
-            email: email,
-            password: password,
-            roomMember: roomMember,
-            roomHost: roomHost,
-          };
-
-          // uploading to database
-          User.findOneAndUpdate(query, { $set: newUser }, (err, data) => {
-            !err && console.log("User update");
+        if (!data) {
+          let password = email + process.env.JWT_ACC_KEY;
+  
+          const query = { googleId: sub };
+          User.findOrCreate(query, (err, user) => {
+            // console.log("I was here");
+            if (!err) {
+              // static room info for testing
+              const roomMember = [];
+              const roomHost = [];
+  
+              // console.log("wrong here 2");
+              const newUser = {
+                name: name,
+                email: email,
+                password: password,
+                roomMember: roomMember,
+                roomHost: roomHost,
+              };
+  
+              // uploading to database
+              User.findOneAndUpdate(query, { $set: newUser }, (err, data) => {
+                // !err && console.log("User update");
+              });
+              res.send(response);
+            } else {
+              // console.log("wrong here 1");
+              console.log(err);
+              res.send(err);
+            }
           });
-          res.send(response);
         } else {
-          console.log("wrong here 1");
-          console.log(err);
-          res.send(err);
+          res.send(response)
         }
-      });
+      })
+
+      
     })
     .catch((err) => {
       console.log(err);
-      console.log("Worng here 5");
+      // console.log("Worng here 5");
     });
-
-
 };

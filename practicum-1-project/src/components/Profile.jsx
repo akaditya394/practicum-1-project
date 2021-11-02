@@ -1,32 +1,65 @@
-import React, { useContext} from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "../styles.css";
-import Navbar from "./Navbar";
+
+import ProfileBox from "./profileBox/profilebox";
+
+import axios from "axios";
+
+// import Navbar from "./Navbar";
 
 import { AppContext } from "./context";
 
 const Profile = (props) => {
   const { payload } = useContext(AppContext);
 
-  console.log(payload)
+  const [roomHostId, updateHostId] = useState([]);
+  const [roomMemberId, updateMemberId] = useState([]);
 
-  // const [profile, updateProfile] = useState(payload);
+  const [roomHostData, updateHostData] = useState([]);
+  const [roomMemberData, updateMemberData] = useState([]);
 
-  // function update(Payload){
-  //   updateProfile(Payload)
-  // }
-  
-  // useEffect((payload)=>{
-  //   console.log("profile from effect")
-  //   console.log(payload)
-  //   update(payload)
-  // })
+  const id = payload.sub;
+  // console.log(id)
 
-  // console.log("profile from profile page")
-  // console.log(profile)
+  function dataFetch() {
+    roomHostId.forEach((id) => {
+      axios.get("http://localhost:4000/roomdata/" + id).then((res) => {
+        console.log(res.data);
+        updateHostData((prevState) => {
+          return [...prevState, res.data];
+        });
+      });
+    });
+
+    roomMemberId.forEach((id) => {
+      axios.get("http://localhost:4000/roomdata/" + id).then((res) => {
+        console.log(res.data);
+        updateMemberData((prevState) => {
+          return [...prevState, res.data];
+        });
+      });
+    });
+  }
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/data/" + id)
+      .then((res) => {
+        updateHostId(res.data.roomHost);
+        updateMemberId(res.data.roomMember);
+
+        dataFetch();
+
+        // console.log("hello");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div id="profile">
         <div id="profile-card">
@@ -67,81 +100,18 @@ const Profile = (props) => {
             <div className="rooms">
               <h2 className="room-heading">your rooms</h2>
 
-              <div className="box">
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">{payload.roomHost[0]}</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        edit
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        schedule
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">{payload.roomHost[1]}</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        edit
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        schedule
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {roomHostData.map((data, index) => (
+                <ProfileBox name={data.name} />
+              ))}
+
 
               <h2 className="room-heading">enrolled rooms</h2>
 
-              <div className="box">
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">{payload.roomMember[0]}</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        see schedule
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-danger btn-block box-btn">
-                        remove
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">{payload.roomMember[1]}</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        see schedule
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-danger btn-block box-btn">
-                        remove
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {roomMemberData.map((data, index) => (
+                <ProfileBox name={data.name} />
+              ))}
+
+
             </div>
           </div>
         </div>

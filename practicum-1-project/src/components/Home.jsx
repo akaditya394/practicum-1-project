@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "../Home.css";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import { gsap } from "gsap";
 
 const Home = () => {
@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <div>
       <div className="home">
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="container-1">
           <div className="fluid-conatiner">
             <img

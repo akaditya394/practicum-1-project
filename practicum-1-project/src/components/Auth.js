@@ -1,5 +1,5 @@
 import React, {  useContext } from "react";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import "../Auth.css";
 import GoogleLogin from "react-google-login";
 import axios from "axios";
@@ -38,7 +38,7 @@ const Auth = () => {
 
   return (
     <div className="login-register">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="auth">
         <div className="register">
           <h3 className="register-title">Have me met before? Register now!</h3>

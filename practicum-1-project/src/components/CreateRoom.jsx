@@ -1,9 +1,15 @@
-import React, { useState } from "react";
-import Navbar from "./Navbar";
+import React, { useState, useContext } from "react";
+// import Navbar from "./Navbar";
 import "../styles.css";
 import axios from "axios";
 
+import { AppContext } from "./context";
+
+
 const CreateRoom = () => {
+
+  const { payload } = useContext(AppContext);
+
 
   // hooks for all input field
   const [email, updateEmail] = useState("");
@@ -34,7 +40,7 @@ const CreateRoom = () => {
     axios
       .post("http://localhost:4000/createroom/createroom", {
         roomInfo: roomInfo,
-        googleId: null,
+        googleId: payload.sub,
       })
       .then((response) => {
         console.log(response);
@@ -49,7 +55,7 @@ const CreateRoom = () => {
 
   return (
     <div className="room-creation">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="create-room">
         <div className="room-plate">
           <h2 className="create-room-heading">create your custom room</h2>

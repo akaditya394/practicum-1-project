@@ -7,7 +7,9 @@ import Rest from "./Rest";
 import Home from "./Home";
 import About from "./About";
 import Waiting from "./Waiting";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "../Navbar.css";
+
 
 
 import { AppContext } from "./context";
@@ -32,9 +34,50 @@ const App = () => {
   }
 
   return (
+      <AppContext.Provider value={{ payload, PayLoadUpdate }}>
     <Router>
       <div>
-      <AppContext.Provider value={{ payload, PayLoadUpdate }}>
+      <div className="login-register">
+      <nav className="navbar navbar-expand-lg navbar-light bg-blue static-top">
+        <div className="container">
+        <Link to="/" className="navbar-brand">
+        rendezvous
+            </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+              <Link to="/createroom" className="navbar-brand">
+             Create Room
+            </Link>
+              </li>
+              <li className="nav-item">
+              <Link to="/auth" className="navbar-brand">
+              Auth
+            </Link>
+              </li>
+              <li className="nav-item">
+              <Link to="/profile" className="navbar-brand">
+              Profile
+            </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+      </div>
 
         <Switch>
           <Route exact path="/" component={Home} />
@@ -46,10 +89,9 @@ const App = () => {
           <Route exact path="/waiting" component={Waiting} />
           <Route exact path="/call" component={Call} />
         </Switch>
-        </AppContext.Provider>
 
-      </div>
     </Router>
+        </AppContext.Provider>
   );
 };
 

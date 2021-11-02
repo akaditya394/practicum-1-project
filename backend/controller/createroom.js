@@ -5,24 +5,29 @@ const findOrCreate = require("mongoose-findorcreate");
 
 exports.createRoom = (req, res) => {
 
+  // console.log(req.body)
+  const {roomInfo} = req.body; 
+  // console.log(roomInfo)
+
   // Data from front-end googleId, roomname, purpose, members
-  console.log(req.body)
+  // console.log(req.body)
 
   // Using fixed googleId for testing
-  const sub = "101112739459253298835";
+  const sub = req.body.googleId;
   const query = { googleId: sub };
 
+
   // Create room
-  Room.findOrCreate(query, (err, user) => {
+  Room.create(query, (err, user) => {
     // console.log("I was here");
     if (!err) {
 
       // Static members for now, will be replace buy req.body.roomInfo.members
-      const members = ["123@gmail.com", "456@gamil.com", "bhaveshgupta802@gmail.com"];
+      const members = roomInfo.members;
 
       //  Static data, will be replaced by req.body.name and .purpose
-      const name = "Test 1 room";
-      const purpose = "Creating room";
+      // const name = "Test 2 room";
+      // const purpose = "Creating room 2";
 
       // Adding room id to this roommembers Database
         members.forEach((member)=>{
@@ -35,21 +40,17 @@ exports.createRoom = (req, res) => {
                     roomMember.push(user._id);
                     // console.log(roomMember)
                     User.findOneAndUpdate({email: member}, { $set: {roomMember: roomMember} }, (err, data) => {
-                        !err && console.log("User update");
+                        // !err && console.log("User update");
                       });
                 }
             })
         })
 
 // will be replaced
-      const newRoom = {
-        name: name,
-        purpose: purpose,
-        members: members,
-      };
+     
 
     // Data to Mongodb
-      Room.findOneAndUpdate(query, { $set: newRoom }, (err, data) => {
+      Room.findOneAndUpdate(query, { $set: roomInfo }, (err, data) => {
         if (!err) {
           // console.log("Updated room");
         //   console.log(data);
