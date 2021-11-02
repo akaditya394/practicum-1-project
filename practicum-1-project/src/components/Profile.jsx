@@ -1,17 +1,72 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "../styles.css";
-import Navbar from "./Navbar";
-const Profile = () => {
+
+import ProfileBox from "./profileBox/profilebox";
+
+import axios from "axios";
+
+// import Navbar from "./Navbar";
+
+import { AppContext } from "./context";
+
+const Profile = (props) => {
+  const { payload } = useContext(AppContext);
+
+  const [roomHostId, updateHostId] = useState([]);
+  const [roomMemberId, updateMemberId] = useState([]);
+
+  const [roomHostData, updateHostData] = useState([]);
+  const [roomMemberData, updateMemberData] = useState([]);
+
+  const id = payload.sub;
+  // console.log(id)
+
+  function dataFetch() {
+    roomHostId.forEach((id) => {
+      axios.get("http://localhost:4000/roomdata/" + id).then((res) => {
+        console.log(res.data);
+        updateHostData((prevState) => {
+          return [...prevState, res.data];
+        });
+      });
+    });
+
+    roomMemberId.forEach((id) => {
+      axios.get("http://localhost:4000/roomdata/" + id).then((res) => {
+        console.log(res.data);
+        updateMemberData((prevState) => {
+          return [...prevState, res.data];
+        });
+      });
+    });
+  }
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/data/" + id)
+      .then((res) => {
+        updateHostId(res.data.roomHost);
+        updateMemberId(res.data.roomMember);
+
+        dataFetch();
+
+        // console.log("hello");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div id="profile">
         <div id="profile-card">
           <div className="profile-card__img">
             <img
               className="profile__img"
-              src="https://image.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg"
+              src={payload.picture}
               alt="profile card"
             />
           </div>
@@ -23,7 +78,7 @@ const Profile = () => {
                     <label>Full Name </label>
                   </div>
                   <div className="col">
-                    <p>Mr. Bean</p>
+                    <p>{payload.name}</p>
                   </div>
                 </div>
 
@@ -32,7 +87,7 @@ const Profile = () => {
                     <label>Email</label>
                   </div>
                   <div className="col">
-                    <p>mrbean@gmail.com</p>
+                    <p>{payload.email}</p>
                   </div>
                 </div>
               </div>
@@ -45,81 +100,18 @@ const Profile = () => {
             <div className="rooms">
               <h2 className="room-heading">your rooms</h2>
 
-              <div className="box">
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">maths</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        edit
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        schedule
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">science</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        edit
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        schedule
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {roomHostData.map((data, index) => (
+                <ProfileBox name={data.name} />
+              ))}
+
 
               <h2 className="room-heading">enrolled rooms</h2>
 
-              <div className="box">
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">maths</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        see schedule
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-danger btn-block box-btn">
-                        remove
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">science</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        see schedule
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-danger btn-block box-btn">
-                        remove
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {roomMemberData.map((data, index) => (
+                <ProfileBox name={data.name} />
+              ))}
+
+
             </div>
           </div>
         </div>
