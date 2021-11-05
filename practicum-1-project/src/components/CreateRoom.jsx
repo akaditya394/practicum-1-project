@@ -2,11 +2,17 @@ import React, { useState, useContext } from "react";
 // import Navbar from "./Navbar";
 import "../styles.css";
 import axios from "axios";
+import { Alert } from 'react-alert'
+import { useAlert } from 'react-alert'
+
 
 import { AppContext } from "./context";
 
 
 const CreateRoom = () => {
+
+  const alert = useAlert()
+
 
   const { payload } = useContext(AppContext);
 
@@ -43,7 +49,8 @@ const CreateRoom = () => {
         googleId: payload.sub,
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
+        alert.show('Room Created')
       })
       .catch(err=>console.log("Some error in post req"))
       ;
