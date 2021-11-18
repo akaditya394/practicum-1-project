@@ -1,11 +1,27 @@
-.nav-link{
-    font-family: 'Ubuntu', sans-serif !important;
-    color: white !important;
+.nav-link {
+  font-family: "Ubuntu", sans-serif !important;
+  color: white !important;
+  text-align: center;
+
+
 }
 
-.navbar-brand{
-    font-family: 'Ubuntu', sans-serif !important;
-    font-size: 2.5rem !important;
-    margin-top: 15px !important;
-    color: #fff !important;
+.navbar-brand {
+  font-family: "Ubuntu", sans-serif !important;
+  font-size: 2.5rem !important;
+  /* margin-top: 15px !important; */
+  color: #fff !important;
+    text-align: center;
+}
+
+.nav__img {
+  border-radius: 100%;
+  text-align: center;
+  width: 4rem;
+  height: 4rem;
+}
+
+.nav_img {
+  text-align: center;
+
 }

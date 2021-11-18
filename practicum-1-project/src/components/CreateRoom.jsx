@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 // import Navbar from "./Navbar";
 import "../styles.css";
 import axios from "axios";
-import { Alert } from 'react-alert'
+// import { Alert } from 'react-alert'
 import { useAlert } from 'react-alert'
 
 
@@ -110,6 +110,14 @@ const CreateRoom = () => {
             <button type="button" className="btn-createroom" onClick={AddList}>
               Create Room
             </button>
+
+            {emailList.length?  <h2 >Room Members</h2>: null }
+
+            <ul>
+              {emailList.map((email)=>{
+                return (<li>{email}</li>)
+              })}
+            </ul>
           </div>
         </div>
       </div>
