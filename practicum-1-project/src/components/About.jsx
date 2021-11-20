@@ -1,11 +1,11 @@
 import React from "react";
 import "../About.css";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 
 const About = () => {
   return (
     <div className="about-page">
-    <Navbar />
+    {/* <Navbar /> */}
       <div className="container-cards">
         <div className="card-about card0">
           <div className="border-card">

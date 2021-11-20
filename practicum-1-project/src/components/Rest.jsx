@@ -1,15 +1,15 @@
 import React from 'react'
 import '../rest.css';
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import CallIcon from '@material-ui/icons/Call';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+// import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 function Rest() {
     return (
         
         <div className='main2'>
-        <Navbar />
+        {/* <Navbar /> */}
             <div className="centre-left">
                 <h3 id='cam'>Camera is off</h3>
                 <CallIcon id='callof'/>
