@@ -97,7 +97,11 @@ const App = () => {
             path="/profile"
             component={isLoggedIn ? Profile : Auth}
           />
-          <Route exact path="/createroom" component={CreateRoom} />
+          <Route
+            exact
+            path="/createroom"
+            component={isLoggedIn ? CreateRoom : Auth}
+          />
           <Route exact path="/rest" component={Rest} />
           <Route exact path="/about" component={About} />
           <Route exact path="/waiting" component={Waiting} />

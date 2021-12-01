@@ -33,9 +33,9 @@ const Profile = (props) => {
 
         updateRun(true);
 
-        console.log("Id updated!");
-        console.log(roomHostId);
-        console.log(roomMemberId);
+        // console.log("Id updated!");
+        // console.log(roomHostId);
+        // console.log(roomMemberId);
 
         // console.log("hello");
       })
@@ -113,7 +113,7 @@ const Profile = (props) => {
               <div>
                 {" "}
                 <h1 className="room-heading">Your Rooms</h1>
-                <ProfileBox id={roomHostId} edit={true} />{" "}
+                <ProfileBox id={roomHostId} email = {payload.email} edit={true} />{" "}
               </div>
             )}
 
@@ -121,7 +121,7 @@ const Profile = (props) => {
               <div>
                 <h1 className="room-heading">Enrolled Rooms</h1>
 
-                <ProfileBox id={roomMemberId} edit={false} />
+                <ProfileBox id={roomMemberId} email = {payload.email} edit={false} />
               </div>
             )}
           </div>

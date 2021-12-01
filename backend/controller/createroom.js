@@ -4,7 +4,7 @@ const Room = require("../models/room");
 const findOrCreate = require("mongoose-findorcreate");
 
 exports.createRoom = (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { roomInfo } = req.body;
 
   // Data from front-end googleId, roomname, purpose, members
