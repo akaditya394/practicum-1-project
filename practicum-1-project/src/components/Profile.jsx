@@ -1,61 +1,61 @@
 import React, { useContext, useState, useEffect } from "react";
 import "../styles.css";
+import { Redirect } from "react-router-dom";
 
 import ProfileBox from "./profileBox/profilebox";
 
 import axios from "axios";
 
 // import Navbar from "./Navbar";
-
 import { AppContext } from "./context";
 
 const Profile = (props) => {
   const { payload } = useContext(AppContext);
 
+  const [run, updateRun] = useState(false);
+
   const [roomHostId, updateHostId] = useState([]);
   const [roomMemberId, updateMemberId] = useState([]);
 
-  const [roomHostData, updateHostData] = useState([]);
-  const [roomMemberData, updateMemberData] = useState([]);
+  const [redirect, updateRedirect] = useState(null);
 
   const id = payload.sub;
   // console.log(id)
 
-  function dataFetch() {
-    roomHostId.forEach((id) => {
-      axios.get("http://localhost:4000/roomdata/" + id).then((res) => {
-        console.log(res.data);
-        updateHostData((prevState) => {
-          return [...prevState, res.data];
-        });
-      });
-    });
-
-    roomMemberId.forEach((id) => {
-      axios.get("http://localhost:4000/roomdata/" + id).then((res) => {
-        console.log(res.data);
-        updateMemberData((prevState) => {
-          return [...prevState, res.data];
-        });
-      });
-    });
-  }
-
-  useEffect(() => {
-    axios
+  async function getData() {
+    await axios
       .get("http://localhost:4000/data/" + id)
       .then((res) => {
-        updateHostId(res.data.roomHost);
-        updateMemberId(res.data.roomMember);
+        const dH = res.data.roomHost;
+        const dM = res.data.roomMember;
+        updateHostId(dH);
+        updateMemberId(dM);
 
-        dataFetch();
+        updateRun(true);
+
+        console.log("Id updated!");
+        console.log(roomHostId);
+        console.log(roomMemberId);
 
         // console.log("hello");
       })
       .catch((err) => {
         console.log(err);
       });
+    return 1;
+  }
+
+  useEffect(() => {
+    getData();
   }, []);
+
+  function createroom() {
+    updateRedirect("/createroom");
+  }
+
+  if (redirect) {
+    return <Redirect to={redirect} />;
+  }
 
   return (
     <div>
@@ -92,27 +92,38 @@ const Profile = (props) => {
                 </div>
               </div>
             </div>
-            <p>
-              <button className="btn btn-success edit-profile epbtn">
+            <div>
+              <button
+                id="btnEdit"
+                className="btn btn-success edit-profile epbtn"
+              >
                 <i className="fas fa-user-edit"></i> Edit Profile
               </button>
-            </p>
-            <div className="rooms">
-              <h2 className="room-heading">your rooms</h2>
 
-              {roomHostData.map((data, index) => (
-                <ProfileBox name={data.name} />
-              ))}
-
-
-              <h2 className="room-heading">enrolled rooms</h2>
-
-              {roomMemberData.map((data, index) => (
-                <ProfileBox name={data.name} />
-              ))}
-
-
+              <button
+                id="btnCreate"
+                className="btn btn-success edit-profile epbtn"
+                onClick={createroom}
+              >
+                <i className="fas fa-user-edit"></i> Create Room
+              </button>
             </div>
+
+            {run && (
+              <div>
+                {" "}
+                <h1 className="room-heading">Your Rooms</h1>
+                <ProfileBox id={roomHostId} edit={true} />{" "}
+              </div>
+            )}
+
+            {run && (
+              <div>
+                <h1 className="room-heading">Enrolled Rooms</h1>
+
+                <ProfileBox id={roomMemberId} edit={false} />
+              </div>
+            )}
           </div>
         </div>
       </div>

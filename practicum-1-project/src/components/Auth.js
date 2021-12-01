@@ -1,10 +1,13 @@
-import React, {  useContext } from "react";
+import React, {  useContext, useState } from "react";
 // import Navbar from "./Navbar";
 import "../Auth.css";
 import GoogleLogin from "react-google-login";
 import axios from "axios";
 // import Profile from "./Profile"
 import { AppContext } from "./context";
+import { Redirect } from "react-router-dom";
+
+// import history from './history';
 
 
 
@@ -12,6 +15,8 @@ const Auth = () => {
 
   // payloadupdate function from contextAPI
   const { PayLoadUpdate } = useContext(AppContext);
+
+  const [redirect, updateRedirect] = useState(null);
 
 // React login method 
   const responseSuccessGoogle = (response) => {
@@ -27,6 +32,9 @@ const Auth = () => {
         // console.log(payload);
         PayLoadUpdate(payload);
         // console.log("Last message")
+        console.log("hello")
+        updateRedirect("/profile")
+        // history.push('/profile');
       })
       .catch((err) =>{ console.log("some error")
     console.log(err)});
@@ -35,6 +43,10 @@ const Auth = () => {
   const responseFailureGoogle = (response) => {
     console.log(response);
   };
+
+  if(redirect){
+    return <Redirect to = {redirect}/>
+  }
 
   return (
     <div className="login-register">

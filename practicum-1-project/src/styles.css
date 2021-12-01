@@ -132,6 +132,7 @@ label {
   padding-left: 13rem;
   font-weight: 400;
   color: #fff;
+  margin-top: 4rem
 }
 
 .box {
@@ -275,4 +276,11 @@ label {
   height: 200px;
   width: 200px;
   padding: 25px;
+}
+
+
+#btnEdit,
+#btnCreate{
+    display: inline-block;
+    vertical-align: top;
 }
