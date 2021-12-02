@@ -13,6 +13,8 @@ import history from "./history";
 
 import "../Navbar.css";
 
+import Edit from "./edit/edit"
+
 import { AppContext } from "./context";
 
 const App = () => {
@@ -106,6 +108,7 @@ const App = () => {
           <Route exact path="/about" component={About} />
           <Route exact path="/waiting" component={Waiting} />
           <Route exact path="/call" component={Call} />
+          <Route exact path="/edit" render={(props)=> <Edit {...props} />} />
         </Switch>
       </Router>
     </AppContext.Provider>

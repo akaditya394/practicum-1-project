@@ -2,6 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useAlert } from 'react-alert'
 
+import { Redirect } from "react-router-dom";
+
+
+// import Edit from "../edit/edit"
+
 
 function ProfileBox(props) {
 
@@ -9,14 +14,26 @@ function ProfileBox(props) {
 
   const alert = useAlert()
 
+  const [redirect, updateRedirect] = useState(null);
+
+  const [editRoom, setEditRoom] = useState("yoyo");
+  
 
   const [data, updateData] = useState([]);
 
   const edit= props.edit;
 
 
-  function editFunction(){
+  function editFunction(event){
     console.log("Edit function")
+
+    const editRoomId = event.target.value;
+    // console.log(editRoomId)
+    setEditRoom(editRoomId)
+    // console.log(editRoom);
+    updateRedirect("/edit");
+    // console.log("inside box ")
+
 
   }
 
@@ -64,7 +81,7 @@ function ProfileBox(props) {
 
   useEffect(() => {
     const id = props.id;
-    console.log(id);
+    // console.log(id);
 
     id.forEach((element,key)=>{
       getDataRoom(element);
@@ -72,6 +89,14 @@ function ProfileBox(props) {
         // console.log(data)
     })
   }, []);
+
+  if (redirect) {
+    return <Redirect to={{
+      pathname: redirect,
+      state: {roomId: editRoom }
+    }} />;
+  }
+
 
   return (
     <div className="box">
