@@ -1,17 +1,72 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "../styles.css";
-import Navbar from "./Navbar";
-const Profile = () => {
+import { Redirect } from "react-router-dom";
+
+import ProfileBox from "./profileBox/profilebox";
+
+import axios from "axios";
+
+// import Navbar from "./Navbar";
+import { AppContext } from "./context";
+
+const Profile = (props) => {
+  const { payload } = useContext(AppContext);
+
+  const [run, updateRun] = useState(false);
+
+  const [roomHostId, updateHostId] = useState([]);
+  const [roomMemberId, updateMemberId] = useState([]);
+
+  const [redirect, updateRedirect] = useState(null);
+
+  const id = payload.sub;
+  // console.log(id)
+
+  async function getData() {
+    await axios
+      .get("http://localhost:4000/data/" + id)
+      .then((res) => {
+        const dH = res.data.roomHost;
+        const dM = res.data.roomMember;
+        updateHostId(dH);
+        updateMemberId(dM);
+
+        updateRun(true);
+
+        // console.log("Id updated!");
+        // console.log(roomHostId);
+        // console.log(roomMemberId);
+
+        // console.log("hello");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    return 1;
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  function createroom() {
+    updateRedirect("/createroom");
+  }
+
+  if (redirect) {
+    return <Redirect to={redirect} />;
+  }
+
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div id="profile">
         <div id="profile-card">
           <div className="profile-card__img">
             <img
               className="profile__img"
-              src="https://image.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg"
+              src={payload.picture}
               alt="profile card"
             />
           </div>
@@ -23,7 +78,7 @@ const Profile = () => {
                     <label>Full Name </label>
                   </div>
                   <div className="col">
-                    <p>Mr. Bean</p>
+                    <p>{payload.name}</p>
                   </div>
                 </div>
 
@@ -32,95 +87,43 @@ const Profile = () => {
                     <label>Email</label>
                   </div>
                   <div className="col">
-                    <p>mrbean@gmail.com</p>
+                    <p>{payload.email}</p>
                   </div>
                 </div>
               </div>
             </div>
-            <p>
-              <button className="btn btn-success edit-profile epbtn">
+            <div>
+              <button
+                id="btnEdit"
+                className="btn btn-success edit-profile epbtn"
+              >
                 <i className="fas fa-user-edit"></i> Edit Profile
               </button>
-            </p>
-            <div className="rooms">
-              <h2 className="room-heading">your rooms</h2>
 
-              <div className="box">
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">maths</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        edit
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        schedule
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">science</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        edit
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        schedule
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <h2 className="room-heading">enrolled rooms</h2>
-
-              <div className="box">
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">maths</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        see schedule
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-danger btn-block box-btn">
-                        remove
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <label className="label">science</label>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-primary btn-block box-btn">
-                        see schedule
-                      </button>
-                    </div>
-                    <div className="col-md-4">
-                      <button className="btn btn-danger btn-block box-btn">
-                        remove
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <button
+                id="btnCreate"
+                className="btn btn-success edit-profile epbtn"
+                onClick={createroom}
+              >
+                <i className="fas fa-user-edit"></i> Create Room
+              </button>
             </div>
+
+            {run && (
+              <div>
+                {" "}
+                <h1 className="room-heading">Your Rooms</h1>
+                <ProfileBox id={roomHostId} email = {payload.email} edit={true} />{" "}
+              </div>
+            )}
+
+            {run && (
+              <div>
+                <h1 className="room-heading">Enrolled Rooms</h1>
+
+                <ProfileBox id={roomMemberId} email = {payload.email} edit={false} />
+              </div>
+            )}
           </div>
         </div>
       </div>

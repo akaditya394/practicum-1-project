@@ -3,15 +3,12 @@ import '../Waiting.css';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import KeyboardIcon from '@material-ui/icons/Keyboard';
 import {NavLink} from 'react-router-dom';
-import Navbar from "../components/Navbar";
-import SettingsIcon from '@material-ui/icons/Settings';
-import HelpIcon from '@material-ui/icons/Help';
-import InfoIcon from '@material-ui/icons/Info';
+// import Navbar from "../components/Navbar"; 
 
 function Waiting() {
     return (
         <>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="body">
             <div className="left">
                 <h2 className="heading">seamless meetings!</h2>
@@ -25,7 +22,7 @@ function Waiting() {
             </div>
             <div className="right">
                 <div className="content">
-                <img src="https://image.freepik.com/free-vector/webinar-concept-illustration_114360-4764.jpg" />
+                <img src="https://image.freepik.com/free-vector/webinar-concept-illustration_114360-4764.jpg" alt="sample " />
                 </div>
             </div>
         </div>
