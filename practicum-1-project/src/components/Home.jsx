@@ -38,8 +38,9 @@ const Home = () => {
         </div>
         <div className="container-2">
           <div className="container-2-a">
-            <button type="button" className="btn-home btn-primary">
-              Get Started
+            <button type="button" className="btn-home btn-outline-danger">
+             <a href="http://localhost:4000" target="_blank">
+              Instant Meet </a>
             </button>
           </div>
         </div>
