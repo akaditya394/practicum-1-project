@@ -113,9 +113,9 @@ function ProfileBox(props) {
             <button className="btn btn-primary btn-block box-btn" value={element._id} onClick={edit? editFunction : removeFunction} >{edit? "Edit" : "Remove" }  </button>
           </div>
           <div className="col-md-4">
-            <button className="btn btn-outline-primary btn-block box-btn">
+            <button className="btn btn-outline-dark btn-block box-btn">
               <a href="http://localhost:4000" target="_blank">
-               join </a>
+               Join </a>
             </button>
           </div>
         </div>
