@@ -6,7 +6,7 @@
 
 .home {
   min-height: 100vh;
-  /* position: fixed; */
+  position: fixed;
 }
 
 .container-1-b {
@@ -43,7 +43,7 @@
   font-family: "Ubuntu", sans-serif !important;
   color: #ffffff !important;
   font-size: 18px !important;
-  background: #6c5ce7 !important;
+  background: black !important;
   padding: 10px 20px 10px 20px !important;
   text-decoration: none !important;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
