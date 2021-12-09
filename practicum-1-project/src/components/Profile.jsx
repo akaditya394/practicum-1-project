@@ -12,6 +12,8 @@ import { AppContext } from "./context";
 const Profile = (props) => {
   const { payload } = useContext(AppContext);
 
+  console.log(payload);
+
   const [run, updateRun] = useState(false);
 
   const [roomHostId, updateHostId] = useState([]);
@@ -121,7 +123,7 @@ const Profile = (props) => {
               <div>
                 <h1 className="room-heading">Enrolled Rooms</h1>
 
-                <ProfileBox id={roomMemberId} email = {payload.email} edit={false} />
+                <ProfileBox id={roomMemberId} email = {payload.email} sub={payload.sub} edit={false} />
               </div>
             )}
           </div>
