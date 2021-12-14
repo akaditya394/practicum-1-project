@@ -22,6 +22,9 @@ const io = require('socket.io')(server, {
   }
 });
 
+let name = { name: "User" };
+
+
 
 // router setup
 const authRoutes = require("./router/auth")
@@ -55,9 +58,21 @@ app.use("/peerjs", peerServer);
 app.use(express.static("public"));
 
 
+
 const getRoomDataCall = (id) => {
   try {
     return axios.get("http://localhost:4000/roomdata/" + id)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+const getName = async (id) => {
+  try {
+    const data = await axios.get("http://localhost:4000/data/" + id)
+    name =data
+    return data
+
   } catch (error) {
     console.error(error)
   }
@@ -76,26 +91,49 @@ app.get("/:room/:google/:type", (req, res) => {
   const IDRoom = req.params.room;
   const MemberEmail = req.params.google;
   const Type = req.params.type;
-  console.log(IDRoom)
-  console.log(MemberEmail)
+  // console.log(IDRoom)
+  // console.log(MemberEmail)
+  // console.log(Type);
 
 
-  const getRoomData = async (Id) => {
+  const getRoomData = async (Id, Type, MemberEmail) => {
     const breeds = getRoomDataCall(Id)
       .then(response => {
         if (response.data) {
           // console.log(res.data)
-          const memberArray =response.data.members;
-          if (Type && MemberEmail == response.data.googleId) {
-            res.redirect("/" + IDRoom)
+          const memberArray = response.data.members;
+          // console.log(Type);
+          // console.log(memberArray)
 
-          }
-          if (!Type&& memberArray.includes(MemberEmail) ){
-            res.redirect("/" + IDRoom)
+          getName(MemberEmail)
+          .then((data)=>{
+            console.log(name);
 
-          } else {
-            res.send("Unauthories access")
-          }
+            console.log(data.data)
+            name = data.data;
+            if (Type && MemberEmail == response.data.googleId) {
+  
+              console.log(name);
+  
+              res.redirect("/" + IDRoom)
+  
+            }
+            else if (memberArray.includes(MemberEmail)) {
+  
+              res.redirect("/" + IDRoom)
+  
+            } else {
+              // console.log(memberArray.includes(MemberEmail))
+  
+              res.send("Unauthories access")
+            }
+          })
+
+          // setTimeout(() => {
+          //   console.log(name)
+          // }, 1000)
+
+         
         }
       })
       .catch(error => {
@@ -103,13 +141,13 @@ app.get("/:room/:google/:type", (req, res) => {
       })
   }
 
-  getRoomData(IDRoom)
+  getRoomData(IDRoom, Type, MemberEmail)
 
 })
 
 app.get("/:room", (req, res) => {
   console.log("Here 2")
-  res.render("room", { roomId: req.params.room });
+  res.render("room", { roomId: req.params.room, name: name.name });
 });
 
 

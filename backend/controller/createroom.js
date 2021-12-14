@@ -39,6 +39,9 @@ exports.createRoom = (req, res) => {
               { $set: { roomMember: roomMember } },
               (err, data) => {}
             );
+          } else if (!data) {
+            // Do something with no data
+            
           }
         });
       });

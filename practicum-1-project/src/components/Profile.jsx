@@ -12,7 +12,7 @@ import { AppContext } from "./context";
 const Profile = (props) => {
   const { payload } = useContext(AppContext);
 
-  console.log(payload);
+  // console.log(payload);
 
   const [run, updateRun] = useState(false);
 
@@ -115,7 +115,7 @@ const Profile = (props) => {
               <div>
                 {" "}
                 <h1 className="room-heading">Your Rooms</h1>
-                <ProfileBox id={roomHostId} email = {payload.email} edit={true} />{" "}
+                <ProfileBox id={roomHostId} email = {payload.email} sub={payload.sub} edit={true} />{" "}
               </div>
             )}
 
@@ -123,7 +123,7 @@ const Profile = (props) => {
               <div>
                 <h1 className="room-heading">Enrolled Rooms</h1>
 
-                <ProfileBox id={roomMemberId} email = {payload.email} sub={payload.sub} edit={false} />
+                <ProfileBox id={roomMemberId} email = {payload.email} sub={null}  edit={false} />
               </div>
             )}
           </div>
