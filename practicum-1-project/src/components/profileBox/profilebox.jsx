@@ -102,8 +102,10 @@ function ProfileBox(props) {
     <div className="box">
       {data.map((element, index) => {
         var query = edit ? props.sub : props.email;
-        // console.log(query)
-        // console.log(props.email)
+        console.log("Profile meet ")
+        console.log(query)
+        console.log(props.email)
+        console.log(props.sub)
 
         var queryType = edit ? true : false;
         var meetLink = "http://localhost:4000/" + element._id + "/" + query+"/"+queryType;
@@ -131,6 +133,5 @@ function ProfileBox(props) {
     </div>
   );
 }
-
 
 export default ProfileBox;

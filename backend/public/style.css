@@ -189,3 +189,15 @@ video {
     display: flex;
   }
 }
+
+video{
+  float: left
+}
+
+.video-name{
+  margin: auto;
+  float: left;
+  clear: left;
+  text-align: center;
+  color: white;
+}
