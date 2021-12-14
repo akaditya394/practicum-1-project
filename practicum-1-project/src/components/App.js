@@ -62,17 +62,17 @@ const App = () => {
                 >
                   <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                      <Link to="/createroom" className="navbar-brand">
-                        Create Room
+                      <Link to="/createroom" class="nav-link">
+                        create room
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link to="/profile" className="navbar-brand">
-                        Profile
+                      <Link to="/profile" className="nav-link">
+                        profile
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link to="/auth" className="navbar-brand">
+                      <Link to="/auth" className="nav-link">
                         {isLoggedIn ? (
                           <img
                             className="nav__img"
@@ -80,7 +80,7 @@ const App = () => {
                             alt="profile card"
                           />
                         ) : (
-                          "SignUp/ Login"
+                          "signUp/ login"
                         )}
                       </Link>
                     </li>

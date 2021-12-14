@@ -96,10 +96,13 @@ const Auth = () => {
             </button>
 
             <div>
+            <br/>
               <h3>Or</h3>
+              <br/>
               <GoogleLogin
                 clientId="592271674414-4qc7458fee6pb9a6r6iq6qlmpplsb7sv.apps.googleusercontent.com"
-                buttonText="Register with google"
+                buttonText="Register with Google"
+                className="google-icon"
                 onSuccess={responseSuccessGoogle}
                 onFailure={responseFailureGoogle}
                 cookiePolicy={"single_host_origin"}
@@ -133,10 +136,13 @@ const Auth = () => {
               </button>
 
               <div>
+                <br/>
                 <h3>Or</h3>
+                <br/>
                 <GoogleLogin
                   clientId="592271674414-4qc7458fee6pb9a6r6iq6qlmpplsb7sv.apps.googleusercontent.com"
-                  buttonText="Login with google"
+                  buttonText="Login with Google"
+                  className="google-icon"
                   onSuccess={responseSuccessGoogle}
                   onFailure={responseFailureGoogle}
                   cookiePolicy={"single_host_origin"}

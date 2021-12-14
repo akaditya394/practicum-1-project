@@ -35,7 +35,7 @@ body {
     width: 400px;
     padding: 10px;
     border-radius: 15px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-left: 200px;
     margin-top: 70px;
   }
@@ -54,7 +54,7 @@ body {
     width: 400px;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-top: 110px;
     margin-left: 200px;
   }
@@ -65,6 +65,7 @@ body {
   padding: 5px;
   font-size:18px;
   border-radius:5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   background-color: #a29bfe;
   color: #fff;
   font-family: 'Ubuntu', sans-serif;
@@ -95,4 +96,12 @@ body {
   
   .nav-item {
     font-family: "Urbanist", sans-serif !important;
+  }
+
+  .google-icon{
+    border-radius: 5px !important;
+    background-color: white !important;
+    padding: 5px !important;
+    /* border: none !important; */
+    border-color: #6c5ce7 !important;
   }

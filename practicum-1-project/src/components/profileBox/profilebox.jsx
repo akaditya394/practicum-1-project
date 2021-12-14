@@ -110,6 +110,7 @@ function ProfileBox(props) {
         var queryType = edit ? true : false;
         var meetLink = "http://localhost:4000/" + element._id + "/" + query+"/"+queryType;
 
+
         return (<div className="col-md-12">
           <div className="row">
             <div className="col-md-4">
