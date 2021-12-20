@@ -4,6 +4,7 @@ import "../Auth.css";
 import GoogleLogin from "react-google-login";
 import axios from "axios";
 // import Profile from "./Profile"
+import "animate.css"
 import { AppContext } from "./context";
 import { Redirect } from "react-router-dom";
 
@@ -52,7 +53,7 @@ const Auth = () => {
     <div className="login-register">
       {/* <Navbar /> */}
       <div className="auth">
-        <div className="register">
+        <div className="register animate__animated animate__fadeInLeft">
           <h3 className="register-title">Have me met before? Register now!</h3>
           <form>
             <div className="mb-3">
@@ -113,7 +114,7 @@ const Auth = () => {
         </div>
       </div>
       <div className="auth">
-        <div className="login">
+        <div className="login animate__animated animate__fadeInRight">
           <h3 className="login-title">Wass'up? Login!</h3>
           <form>
             <div className="mb-3">

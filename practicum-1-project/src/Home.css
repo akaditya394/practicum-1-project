@@ -4,6 +4,8 @@
   margin-top: 40px;
 }
 
+
+
 .home {
   min-height: 100vh;
   position: fixed;
@@ -25,7 +27,7 @@
 
 .container-2 {
   position: absolute;
-  margin-left: 100px;
+  margin-left: 150px;
   margin-top: 350px;
   /* background-color:white; */
   /* padding: 25px; */
@@ -33,7 +35,7 @@
 
 .container-2-a {
   float: left;
-  margin: 20px;
+  margin: 50px;
 }
 
 .btn-home {

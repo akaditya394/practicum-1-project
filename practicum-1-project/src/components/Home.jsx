@@ -27,19 +27,19 @@ const Home = () => {
       <div className="home">
         {/* <Navbar /> */}
         <div className="container-1">
-          <div className="fluid-conatiner">
+          <div className="fluid-conatiner animate__animated animate__backInRight animate__delay-2s">
             <img
               src="https://image.freepik.com/free-vector/online-tutorials-concept_52683-37480.jpg"
               alt="Someimage"
             />
           </div>
           <div className="container-1-b">
-            <p className="animate__swing">seamless meetings!</p>
+            <p className="animate__animated animate__backInLeft animate__delay-2s">seamless meetings!</p>
           </div>
         </div>
         <div className="container-2">
           <div className="container-2-a">
-            <button type="button" className="btn-home btn-outline-danger">
+            <button type="button" className="btn-home btn-outline-danger animate__animated animate__backInLeft animate__delay-2s">
              <a href="http://localhost:4000/" target="_blank">
               Instant Meet </a>
             </button>

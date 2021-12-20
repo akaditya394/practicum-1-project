@@ -1,5 +1,7 @@
 body{
-    background-color: #a29bfe !important;
+    background: url("https://image.freepik.com/free-vector/gradient-dynamic-purple-lines-background_23-2148995757.jpg") !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
 }
 
 .create-room{
@@ -239,7 +241,8 @@ body{
 
 
 .custom-modal-content {
-    background-color: #fefefe;
+    background-color: #6c5ce7;
+    color: #fff !important; 
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #17a2b8;

@@ -41,7 +41,7 @@ const App = () => {
         <div>
           <div className="login-register">
             <nav className="navbar navbar-expand-lg navbar-light bg-blue static-top">
-              <div className="container">
+              <div className="container animate__animated animate__backInLeft animate__delay-3s">
                 <Link to="/" className="navbar-brand">
                   rendezvous
                 </Link>
@@ -57,7 +57,7 @@ const App = () => {
             <span className="navbar-toggler-icon"></span>
           </button> */}
                 <div
-                  className="collapse navbar-collapse"
+                  className="collapse navbar-collapse animate__animated animate__backInRight animate__delay-3s"
                   id="navbarSupportedContent"
                 >
                   <ul className="navbar-nav ms-auto">

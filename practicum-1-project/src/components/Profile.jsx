@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import "../styles.css";
+import "animate.css";
 import { Redirect } from "react-router-dom";
 
 import ProfileBox from "./profileBox/profilebox";
@@ -73,7 +74,7 @@ const Profile = (props) => {
             />
           </div>
           <div className="profile-content">
-            <div className="box-profile">
+            <div className="box-profile animate__animated animate__fadeInRight">
               <div className="col">
                 <div className="row">
                   <div className="col">
@@ -112,7 +113,7 @@ const Profile = (props) => {
             </div>
 
             {run && (
-              <div>
+              <div className=" animate__animated animate__fadeInRight">
                 {" "}
                 <h1 className="room-heading">Your Rooms</h1>
                 <ProfileBox id={roomHostId} email = {payload.email} sub={payload.sub} edit={true} />{" "}
@@ -120,7 +121,7 @@ const Profile = (props) => {
             )}
 
             {run && (
-              <div>
+              <div class=" animate__animated animate__fadeInRight">
                 <h1 className="room-heading">Enrolled Rooms</h1>
 
                 <ProfileBox id={roomMemberId} email = {payload.email} sub={null}  edit={false} />

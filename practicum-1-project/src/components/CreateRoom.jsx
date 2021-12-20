@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 // import Navbar from "./Navbar";
 import "../styles.css";
 import axios from "axios";
+import "animate.css";
 // import { Alert } from 'react-alert'
 import { useAlert } from 'react-alert'
 
@@ -63,7 +64,7 @@ const CreateRoom = () => {
   return (
     <div className="room-creation">
       {/* <Navbar /> */}
-      <div className="create-room">
+      <div className="create-room animate__animated animate__flipInX">
         <div className="room-plate">
           <h2 className="create-room-heading">create your custom room</h2>
           <div>
