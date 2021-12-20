@@ -29,8 +29,8 @@ function ProfileBox(props) {
     console.log("Edit function")
 
     // console.log(editRoomId)
-    setEditRoom(editRoomId)
     const editRoomId = event.target.value;
+    setEditRoom(editRoomId)
     // console.log(editRoom);
     updateRedirect("/edit");
     // console.log("inside box ")
@@ -101,14 +101,14 @@ function ProfileBox(props) {
   return (
     <div className="box">
       {data.map((element, index) => {
-        var query = edit ? props.sub : props.email;
-        console.log("Profile meet ")
-        console.log(query)
-        console.log(props.email)
-        console.log(props.sub)
+        // var query = edit ? props.sub : props.email;
+        // console.log("Profile meet ")
+        // console.log(query)
+        // console.log(props.email)
+        // console.log(props.sub)
 
-        var queryType = edit ? true : false;
-        var meetLink = "http://localhost:4000/" + element._id + "/" + query+"/"+queryType;
+        // var queryType = edit ? true : false;
+        var meetLink = "http://localhost:4000/?room=" + element.name + "_" +element._id;
 
 
         return (<div className="col-md-12">
