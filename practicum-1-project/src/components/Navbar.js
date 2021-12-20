@@ -1,5 +1,6 @@
 import React from "react";
 import "../Navbar.css";
+import 'animate.css';
 
 const Navbar = () => {
   return (

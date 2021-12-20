@@ -221,6 +221,11 @@ window.addEventListener( 'load', () => {
                     document.getElementById( 'videos' ).appendChild( cardDiv );
 
                     h.adjustVideoElemSize();
+                    let elem = document.getElementsByClassName('card');
+                    let participants = elem.length + 1;
+
+                    document.getElementById('participants').innerText = participants;
+
                 }
             };
 

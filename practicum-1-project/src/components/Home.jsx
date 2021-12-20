@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "../Home.css";
 // import Navbar from "./Navbar";
 import { gsap } from "gsap";
+import "animate.css";
 
 const Home = () => {
   const animeRef = useRef();
@@ -33,7 +34,7 @@ const Home = () => {
             />
           </div>
           <div className="container-1-b">
-            <p>seamless meetings!</p>
+            <p className="animate__swing">seamless meetings!</p>
           </div>
         </div>
         <div className="container-2">
