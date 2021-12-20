@@ -4,6 +4,7 @@ body {
   background-color: #83bff7;
   display: flex;
   flex-direction: column;
+  background-image: url("https://image.freepik.com/free-vector/gradient-dynamic-purple-lines-background_23-2148995757.jpg");
 }
 
 .container-fluid {

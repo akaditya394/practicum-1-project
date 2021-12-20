@@ -1,15 +1,62 @@
+body{
+    background-color: #a29bfe !important;
+}
+
+.create-room{
+    font-family: "Ubuntu", sans-serif;
+    color: #fff;
+    background-color: #6c5ce7;
+    margin-top:100px;
+    border-radius: 15px;
+    padding-bottom: 15px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    width: 50%;
+}
+
+.nav-rendevous{
+    background-color: #6c5ce7!important;
+    font-family: "Ubuntu";
+    font-size: 20px;
+    height:50px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.icons{
+    align-items: center;
+    margin-right: 0px;
+    width: 500px;
+    text-align: center;
+    margin-left: 85px;
+}
+
+.icon{
+    margin: 0 10px 0 10px;
+}
+
+.icon:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.chat{
+    background-color: #6c5ce7 !important;
+    font-family: "Ubuntu";
+    margin-top:0 !important;
+    border-radius: 15px;
+}
+
+
 .chat-col{
     right: -100vw;
     bottom: 0;
-    top: 40.5px;
+    top: 0px;
     z-index: 1000;
     position: fixed;
     color: #fff;
     padding-right: 5px;
     padding-left: 5px;
-    padding-bottom: 40px;
+    padding-bottom: none;
     padding-top: 15px;
-    min-height: 100vh;
+    height: 650px;
 }
 
 .chat-col.chat-opened {
@@ -36,8 +83,10 @@
 }
 
 .chat-box{
-    bottom: 0px;
+    bottom: 20px;
     right: 0;
+    width: 80%;
+    border-radius:15px !important;
     position: absolute;
     border: 0;
     border-top: 1px groove white;
@@ -45,10 +94,17 @@
     font-size: small;
 }
 
+.send{
+    background-color: #a29bfe !important;
+    border-radius: 15px !important;
+    bottom:20px;
+}
+
 .chat-box::placeholder{
     font-size: small;
+    font-family: "Ubuntu";
     font-weight: lighter;
-    font-style: italic;
+    
 }
 
 .chat-box,
@@ -58,7 +114,7 @@
 }
 
 .chat-row{
-    height: 100%;
+    height: 80%;
     overflow-x: scroll;
 }
 
@@ -68,15 +124,16 @@
 
 
 .remote-video{
-    width:100%;
-    height:auto;
-    max-height: 90vh;
+    width:20px !important;
+    height:500px;
+    margin-left: 100px;
+    /* max-height: 90vh; */
 }
 
 
 .remote-video-controls{
     position:absolute;
-    bottom: 0;
+    bottom: 0px;
     background-color:rgba(0, 0, 0, 0.5);
     z-index:300000;
     padding: 10px;
@@ -93,10 +150,12 @@
 
 
 .local-video{
-    bottom: 0;
-    left: 0;
+    bottom: 50px;
+    left: 0px;
     position: fixed;
     width:15vw;
+    border-radius:20px;
+
 }
 
 
@@ -111,6 +170,7 @@
 .sender-info{
     font-size: smaller;
     margin-top: 5px;
+    font-family: "Ubuntu";
     align-self: flex-end;
 }
 
