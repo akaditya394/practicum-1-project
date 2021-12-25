@@ -27,12 +27,13 @@ body{
     align-items: center;
     margin-right: 0px;
     width: 500px;
+    justify-content: center;
     text-align: center;
     margin-left: 85px;
 }
 
 .icon{
-    margin: 0 10px 0 10px;
+    margin: 0 25px 0 25px;
 }
 
 .icon:hover{
